@@ -1,20 +1,20 @@
 public class MainActivity extends Activity implements SensorEventListener{
 	
 	//change these values according to your threshold requirement
-    private static final int FORCE_THRESHOLD = 800;
-    private static final int TIME_THRESHOLD = 150;
-    private static final int SHAKE_TIMEOUT = 500;
-    private static final int SHAKE_DURATION = 1500;
-    private static final int SHAKE_COUNT = 3;
+	    	private static final int FORCE_THRESHOLD = 800;
+	    	private static final int TIME_THRESHOLD = 150;
+	    	private static final int SHAKE_TIMEOUT = 500;
+	    	private static final int SHAKE_DURATION = 1500;
+	    	private static final int SHAKE_COUNT = 3;
 	
 	
 	private SensorManager sm;
 	private int mShakeCount = 0;
-    private long mLastShake;
-    private long mLastForce;
-    private float mLastX = -1.0f, mLastY = -1.0f,mLastZ = -1.0f;
-    private float x, y, z;
-    private long mLastTime;
+	private long mLastShake;
+	private long mLastForce;
+	private float mLastX = -1.0f, mLastY = -1.0f,mLastZ = -1.0f;
+	private float x, y, z;
+	private long mLastTime;
 
 	
     @Override
@@ -37,7 +37,7 @@ public class MainActivity extends Activity implements SensorEventListener{
 
     }
 	
-	@Override
+    @Override
     public void onSensorChanged(SensorEvent event) {
         if (event.sensor.getType() == Sensor.TYPE_ACCELEROMETER) {
             x = event.values[0];
@@ -80,7 +80,7 @@ public class MainActivity extends Activity implements SensorEventListener{
 
     }
 	
-	 @Override
+    @Override
     protected void onPause() {
         super.onPause();
         if (sm != null) {
